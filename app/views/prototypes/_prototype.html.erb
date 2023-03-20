@@ -9,7 +9,7 @@
        <%= prototype.created_at %><br>
       <%= prototype.recommendation %>
     </p>
-    <%= link_to "#{prototype.user.nickname}さん", prototype_path(prototype.id), class: :card__user %>
+    <%= link_to "#{prototype.user.nickname}さん", user_path(prototype.user.id), class: :card__user %>
   </div>
 </div>
 
