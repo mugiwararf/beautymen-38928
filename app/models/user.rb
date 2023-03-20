@@ -6,6 +6,7 @@ class User < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :year
   belongs_to :skin
+  has_many   :prototypes
 
   validates :nickname, presence: true
 
