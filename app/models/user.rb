@@ -7,6 +7,7 @@ class User < ApplicationRecord
   belongs_to :year
   belongs_to :skin
   has_many   :prototypes
+  has_many   :comments
 
   validates :nickname, presence: true
 
