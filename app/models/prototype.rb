@@ -4,10 +4,13 @@ class Prototype < ApplicationRecord
 
   has_one_attached :image
 
-  validates :name,           presence: true
-  validates :recommendation, presence: true
-  validates :explanation,    presence: true
-  validates :image,          presence: true
+  with_options presence: true do
+  validates :name           
+  validates :recommendation
+  validates :explanation
+  validates :category_id
+  validates :image
+  end   
 
   validates :category_id, numericality: { other_than: 1 }
 end
