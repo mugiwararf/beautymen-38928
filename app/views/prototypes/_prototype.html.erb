@@ -1,10 +1,16 @@
 <div class="card">
   <%= link_to image_tag(prototype.image, class: :card__img ), prototype_path(prototype.id), method: :get %>
   <div class="card__body">
-    <%= link_to prototype.name, root_path, class: :card__title%>
+    <%= link_to prototype.name, prototype_path(prototype.id), class: :card__title%>
         <%= prototype.user.year.name  %>     |
         <%= prototype.user.skin.name  %>
-
+        <div id="prototype_<%= prototype.id %>">
+         <% if current_user.liked_by?(prototype.id) %>
+         <div><%= link_to '❤️', destroy_like_path(prototype), method: :DELETE, remote: true  %><%= prototype.likes.count %></div>
+         <% else %>
+         <div><%= link_to '♡', create_like_path(prototype), method: :POST, remote: true  %><%= prototype.likes.count %></div>
+         <% end %>
+         </div>
     <p class="card__summary">
        <%= prototype.created_at %><br>
       <%= prototype.recommendation %>

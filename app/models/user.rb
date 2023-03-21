@@ -10,6 +10,7 @@ class User < ApplicationRecord
   belongs_to :skin
   has_many   :prototypes
   has_many   :comments
+  has_many   :likes, dependent: :destroy
 
   with_options presence: true do
   validates :nickname
@@ -21,5 +22,12 @@ class User < ApplicationRecord
   validates :year_id
   validates :skin_id
   end
+
+  def liked_by?(prototype_id)
+    likes.where(prototype_id: prototype_id).exists?  
+  end
+
+
+
 
 end
