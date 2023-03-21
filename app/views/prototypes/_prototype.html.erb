@@ -4,13 +4,13 @@
     <%= link_to prototype.name, prototype_path(prototype.id), class: :card__title%>
         <%= prototype.user.year.name  %>     |
         <%= prototype.user.skin.name  %>
-        <div id="prototype_<%= prototype.id %>">
+        <% if user_signed_in? %>
          <% if current_user.liked_by?(prototype.id) %>
-         <div><%= link_to '❤️', destroy_like_path(prototype), method: :DELETE, remote: true  %><%= prototype.likes.count %></div>
+         <div><%= link_to 'いいね', destroy_like_path(prototype), method: :DELETE, remote: true  %><%= prototype.likes.count %></div>
          <% else %>
-         <div><%= link_to '♡', create_like_path(prototype), method: :POST, remote: true  %><%= prototype.likes.count %></div>
+         <div><%= link_to '外す', create_like_path(prototype), method: :POST, remote: true  %><%= prototype.likes.count %></div>
          <% end %>
-         </div>
+         <% end %>
     <p class="card__summary">
        <%= prototype.created_at %><br>
       <%= prototype.recommendation %>
