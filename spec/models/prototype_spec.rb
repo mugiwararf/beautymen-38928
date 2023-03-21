@@ -41,6 +41,12 @@ RSpec.describe Prototype, type: :model do
         @prototype.valid?
         expect(@prototype.errors.full_messages).to include("Image can't be blank")
       end
-      end     
+      
+      it 'ユーザーが空だと投稿できない' do
+        @prototype.user = nil
+        @prototype.valid?
+        expect(@prototype.errors.full_messages).to include("User must exist")
+      end
+    end     
   end
 end
