@@ -145,6 +145,10 @@ a {
   margin-bottom: 16px;
   width: 50%;
 }
+.card__imgs {
+  width: 100%;
+  height: 100%;
+}
 .card__title {
   display: block;
   font-size: 20px;
@@ -163,6 +167,28 @@ a {
   color: cadetblue;
   text-align: center;
 }
+.wrapper {
+  display: flex;
+  overflow-x: scroll;
+  background: white;
+}
+
+.container {
+  display: flex;
+  border: solid darkgreen;
+}
+
+.container__item {
+  width: 363px;
+  height: 200px;
+  background: lightblue;
+}
+
+.container__item:not(:last-child) {
+  margin-right: 10px;
+}
+
+
 
 /* 詳細ページ */
 .prototype__wrapper{
