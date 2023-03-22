@@ -14,7 +14,8 @@
 
     <p class="card__summary">
        <%= prototype.created_at %><br>
-      <%= prototype.recommendation %>
+      <%= prototype.recommendation.truncate(50) %>
+        <%= link_to "続きを読む", prototype_path(prototype.id), class: :card_num %>
     </p>
     <%= link_to "#{prototype.user.nickname}さん", user_path(prototype.user.id), class: :card__user %>
   </div>
