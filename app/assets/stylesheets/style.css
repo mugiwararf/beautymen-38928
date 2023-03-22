@@ -66,6 +66,15 @@ a {
   border-radius: 3px;
   transition: 0.4s ease;
 }
+.nav__btnsv{
+  padding: 0.4em 1.6em;
+  font-size: 0.8em;
+  color: #87CEFA;
+  text-decoration: none;
+  user-select: none;
+  border-radius: 3px;
+  transition: 0.4s ease;
+}
 .nav__btn:hover{
   color: #fff;
   background: #87CEFA;
@@ -82,7 +91,11 @@ a {
 .nav__logout:hover{
   opacity: 0.5;
 }
-
+.janl {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 22px;
+}
 /* フォーム周り */
 .form__wrapper{
   min-height: calc(100vh - 161px);
