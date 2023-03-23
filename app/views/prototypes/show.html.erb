@@ -30,7 +30,7 @@
       </div>
       <div class="prototype__comments">
         <% if user_signed_in? %>
-          <%= form_with model: [@prototype, @comment],local: true do |f| %>
+          <%= form_with model: [@prototype, @comment], id: "comments-form", local: true do |f| %>
             <div class="field">
               <%= f.label :content, "コメント" %>  <br /> 
               <%= f.text_field :content, id:"comment_content" %>
@@ -40,15 +40,14 @@
             </div>
           <% end %>
           <% end  %>
-        <ul class="comments_lists">
-          <% @comments.each do |comment| %>
-            <li class="comments_list">
-              <%= comment.content %>
-              <%= link_to comment.user.nickname, user_path(comment.user.id), class: :comment_user %>
-            </li>
-          <% end %>
-        </ul>
-      </div>
+        <div class="comments_lists", id="comments" >
+           <% @comments.each do |comment| %>
+             <div class="comment">
+               <p class="user-info"><%= comment.user.nickname %>: </p>
+               <p><%= comment.content%></p>
+             <% end %>
+            </div>
+        </div>
     </div>
   </div>
 </main>
