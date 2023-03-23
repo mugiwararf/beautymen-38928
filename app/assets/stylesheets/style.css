@@ -286,10 +286,7 @@ a {
   color: #999;
   text-decoration: underline;
 }
-.user-info{
-  color: gray;
-  font-weight: bold;
-}
+
 /* ユーザーページ */
 .user__wrapper{
   min-height: calc(100vh - 161px);
