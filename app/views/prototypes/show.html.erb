@@ -40,14 +40,15 @@
             </div>
           <% end %>
           <% end  %>
-        <div class="comments_lists", id="comments" >
-           <% @comments.each do |comment| %>
-             <div class="comment">
-               <p class="user-info"><%= comment.user.nickname %>: </p>
-               <p><%= comment.content%></p>
-             <% end %>
+        <% @comments.each do |comment| %>
+           <li class="comments_list">
+            <%= comment.content %>
+           <%= link_to comment.user.nickname, user_path(comment.user.id), class: :comment_user %>
+           </li>
+         <% end %>
             </div>
         </div>
     </div>
   </div>
 </main>
+
