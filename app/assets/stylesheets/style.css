@@ -101,6 +101,10 @@ a {
   display: none;
 }
 
+.setmen {
+  color: white;
+}
+
 /* フォーム周り */
 .form__wrapper{
   min-height: calc(100vh - 161px);
@@ -209,7 +213,6 @@ a {
 .container__item:not(:last-child) {
   margin-right: 10px;
 }
-
 
 
 /* 詳細ページ */

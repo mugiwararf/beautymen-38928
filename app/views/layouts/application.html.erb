@@ -5,6 +5,7 @@
     <title>ProtoSpace</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+        <script type="text/javascript" src="https://js.pay.jp/v2/pay.js"></script>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700,900&display=swap" rel="stylesheet">
@@ -33,17 +34,21 @@
      <div>
      <ul class= "janl">
      <li>
-  <%= link_to " メンズスキンケア", '###', class: :nav__btnsv %>
-   <ul class="show-lists hidden" id="pull-down">
-      <li>リスト1</li>
-      <li>リスト2</li>
-      <li>リスト3</li>
-      <li>リスト4</li>
+  <%= link_to " メンズスキンケア", '###', class: :nav__btnsv, id: :pull_down %>
+   <ul class="show-lists hidden" id="lists" >
+      <li class="setmen">男の肌の悩み</li>
+      <li class="setmen">メンズスキンケア商品</li>
+      <li class="setmen">男のスペシャルケア</li>
     </ul>
      </li>
      <li>
-       <%= link_to "メンズメイク ", '###', class: :nav__btnsv %>
-     </li>
+       <%= link_to "メンズメイク ", '###', class: :nav__btnsv, id: :pull_down %>
+      <ul class="show-lists hidden" id="lists" >
+      <li class="setmen">男の肌の悩み</li>
+      <li class="setmen">メンズスキンケア商品</li>
+      <li class="setmen">男のスペシャルケア</li>
+    </ul>
+       </li>
      <li>
       <%= link_to "メンズヘア ", '###', class: :nav__btnsv %>
      </li>
