@@ -4,6 +4,7 @@ window.addEventListener('load', function(){
   const pullDownParents = document.getElementById("lists")
 
 
+
   pullDownButton.addEventListener('mouseover', function(){
     if (pullDownParents.getAttribute("style") == "display:block;") {
       pullDownParents.removeAttribute("style")
@@ -13,7 +14,7 @@ window.addEventListener('load', function(){
   })
 
   pullDownButton.addEventListener('mouseout', function(){
-
+    removeAttribute("style")
   })
 
 })

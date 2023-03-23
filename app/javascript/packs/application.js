@@ -8,6 +8,10 @@ require("@rails/ujs").start()
 require("@rails/activestorage").start()
 require("channels")
 require("./prototype")
+require("./meik")
+require("./hed")
+require("./body")
+
 
 
 
