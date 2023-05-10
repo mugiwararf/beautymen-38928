@@ -1,5 +1,5 @@
 class PrototypesController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show, :search]
   before_action :set_prototype, only: [:show, :edit, :update, :destroy]
   before_action :contributor_confirmation, only: [:edit, :update, :destroy]
 
@@ -42,6 +42,9 @@ class PrototypesController < ApplicationController
    redirect_to root_path
  end
 
+ def search
+  @prototypes = Prototype.search(params[:keyword])
+ end
   private
 
   def prototype_params

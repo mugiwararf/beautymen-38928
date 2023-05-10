@@ -105,6 +105,11 @@ a {
   color: white;
 }
 
+
+.search-form {
+  text-align: right;
+}
+
 /* フォーム周り */
 .form__wrapper{
   min-height: calc(100vh - 161px);
